@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import File04Icon from '@untitled-ui/icons-react/build/esm/File04';
-import { Box, Button, Drawer, Stack, SvgIcon, Typography } from '@mui/material';
+import { Box, Drawer, Stack } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { Logo } from 'src/components/logo';
 import { RouterLink } from 'src/components/router-link';
@@ -217,30 +216,6 @@ export const SideNav = (props) => {
             ))}
           </Stack>
           <Box sx={{ p: 3 }}>
-            {/* <Typography variant="subtitle1">
-              Need help?
-            </Typography>
-            <Typography
-              color="neutral.400"
-              sx={{ mb: 2 }}
-              variant="body2"
-            >
-              Please check our docs.
-            </Typography>
-            <Button
-              component="a"
-              fullWidth
-              href={paths.docs}
-              startIcon={(
-                <SvgIcon>
-                  <File04Icon />
-                </SvgIcon>
-              )}
-              target="_blank"
-              variant="contained"
-            >
-              Documentation
-            </Button> */}
           </Box>
         </Stack>
       </Scrollbar>

@@ -2,7 +2,6 @@ import { createResourceId } from 'src/utils/create-resource-id';
 import { decode, JWT_EXPIRES_IN, JWT_SECRET, sign } from 'src/utils/jwt';
 import { wait } from 'src/utils/wait';
 import { users } from './data';
-// import { useNavigate } from "react-router-dom";
 
 const STORAGE_KEY = 'users';
 

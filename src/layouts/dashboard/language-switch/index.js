@@ -3,11 +3,7 @@ import { Box, IconButton, Tooltip } from '@mui/material';
 import { usePopover } from 'src/hooks/use-popover';
 import { LanguagePopover } from './language-popover';
 
-const languages = {
-  // en: '/assets/flags/flag-uk.svg',
-  // de: '/assets/flags/flag-de.svg',
-  // es: '/assets/flags/flag-es.svg'
-};
+const languages = {};
 
 export const LanguageSwitch = () => {
   const { i18n } = useTranslation();

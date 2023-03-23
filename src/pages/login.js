@@ -49,8 +49,6 @@ const Page = () => {
     validationSchema,
     onSubmit: async (values, helpers) => {
       try {
-        console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-        console.log(values)
         await signIn(values.email, values.password);
 
         if (isMounted()) {
@@ -152,11 +150,6 @@ const Page = () => {
           spacing={3}
           sx={{ mt: 3 }}
         >
-          {/* <Alert severity="error">
-            <div>
-              You can use <b>demo@devias.io</b> and password <b>Password123!</b>
-            </div>
-          </Alert> */}
           <AuthIssuer issuer={issuer} />
         </Stack>
       </div>

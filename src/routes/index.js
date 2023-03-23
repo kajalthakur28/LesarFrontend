@@ -26,7 +26,10 @@ export const routes = [
     children: [
       {
         index: true,
-        element: <HomePage />
+        element: 
+        <AuthLayout>
+          <LoginPage />
+        </AuthLayout>
       },
       {
         path: 'pricing',

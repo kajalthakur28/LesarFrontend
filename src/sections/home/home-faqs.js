@@ -71,42 +71,7 @@ const Faq = (props) => {
 
 export const HomeFaqs = () => {
   return (
-    <Box sx={{ py: '120px' }}>
-      <Container maxWidth="lg">
-        <Grid
-          container
-          spacing={4}
-        >
-          <Grid
-            xs={12}
-            md={6}
-          >
-            <Stack spacing={2}>
-              <Typography variant="h3">
-                Everything you need to know
-              </Typography>
-              <Typography
-                color="text.secondary"
-                variant="subtitle2"
-              >
-                Frequently asked questions
-              </Typography>
-            </Stack>
-          </Grid>
-          <Grid
-            xs={12}
-            md={6}
-          >
-            <Stack spacing={4}>
-              {faqs.map((faq, index) => (
-                <Faq
-                  key={index}
-                  {...faq} />
-              ))}
-            </Stack>
-          </Grid>
-        </Grid>
-      </Container>
-    </Box>
+    <>
+    </>
   );
 };

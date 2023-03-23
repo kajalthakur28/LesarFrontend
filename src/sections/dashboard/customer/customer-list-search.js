@@ -14,24 +14,7 @@ import {
 } from '@mui/material';
 import { useUpdateEffect } from 'src/hooks/use-update-effect';
 
-const tabs = [
-  {
-    // label: 'All',
-    value: 'all'
-  },
-  {
-    // label: 'Accepts Marketing',
-    value: 'hasAcceptedMarketing'
-  },
-  {
-    // label: 'Prospect',
-    value: 'isProspect'
-  },
-  {
-    // label: 'Returning',
-    value: 'isReturning'
-  }
-];
+const tabs = [];
 
 const sortOptions = [
   {
@@ -126,7 +109,6 @@ export const CustomerListSearch = (props) => {
         direction="row"
         flexWrap="wrap"
         spacing={3}
-        // sx={{ p: 3 }}
       >
         <Box
           component="form"

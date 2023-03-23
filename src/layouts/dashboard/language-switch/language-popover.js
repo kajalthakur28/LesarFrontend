@@ -5,20 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Box, ListItemIcon, ListItemText, MenuItem, Popover, Typography } from '@mui/material';
 import { tokens } from 'src/locales/tokens';
 
-const languageOptions = {
-  // en: {
-  //   icon: '/assets/flags/flag-uk.svg',
-  //   label: 'English'
-  // },
-  // de: {
-  //   icon: '/assets/flags/flag-de.svg',
-  //   label: 'German'
-  // },
-  // es: {
-  //   icon: '/assets/flags/flag-es.svg',
-  //   label: 'Spanish'
-  // }
-};
+const languageOptions = {};
 
 export const LanguagePopover = (props) => {
   const { anchorEl, onClose, open = false, ...other } = props;
@@ -47,39 +34,6 @@ export const LanguagePopover = (props) => {
       open={open}
       PaperProps={{ sx: { width: 220 } }}
       {...other}>
-      {/* {Object.keys(languageOptions).map((language) => {
-        const option = languageOptions[language];
-
-        return (
-          <MenuItem
-            onClick={() => handleChange(language)}
-            key={language}
-          >
-            <ListItemIcon>
-              <Box
-                sx={{
-                  width: 28,
-                  '& img': {
-                    width: '100%'
-                  }
-                }}
-              >
-                <img
-                  alt={option.label}
-                  src={option.icon}
-                />
-              </Box>
-            </ListItemIcon>
-            <ListItemText
-              primary={(
-                <Typography variant="subtitle2">
-                  {option.label}
-                </Typography>
-              )}
-            />
-          </MenuItem>
-        );
-      })} */}
     </Popover>
   );
 };

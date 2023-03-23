@@ -74,7 +74,7 @@ const useCustomersStore = (searchState) => {
     try {
       //const response = await customersApi.getCustomers(searchState);
       var myHeaders = new Headers();
-      myHeaders.append("Authorization", "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc5NTc3MjQ2LCJpYXQiOjE2Nzk0OTA4NDYsImp0aSI6IjM1OGIxODdmYzRhNTQ1OWI4ZWI1ZGFhMTkzODViOTIyIiwidXNlcl9pZCI6MX0.QXQnFY82HkXVD8Yqe3iy-CoEcPlY0TwL2wjsdETlAD4");
+      myHeaders.append("Authorization", "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc5Njc2MzE1LCJpYXQiOjE2Nzk1ODk5MTUsImp0aSI6IjU5ODE5MWUxZjViOTRhN2NhNzE5MzAzOWQzMDEzNmM2IiwidXNlcl9pZCI6MX0.Ug7nA3WkiNKHqR8_eedAnK9WdQ8m5g8awfieGKg9CSw");
       
       var requestOptions = {
         method: 'GET',
@@ -89,7 +89,6 @@ const useCustomersStore = (searchState) => {
         })
         .catch(error => console.log('error', error));
 
-        console.log("aaaaaaaaa")
         var obj = JSON.parse(responce)
         console.log(obj.data)
       if (isMounted()) {

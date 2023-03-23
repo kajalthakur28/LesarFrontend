@@ -1,4 +1,3 @@
-import numeral from 'numeral';
 import PropTypes from 'prop-types';
 import ArrowRightIcon from '@untitled-ui/icons-react/build/esm/ArrowRight';
 import Edit02Icon from '@untitled-ui/icons-react/build/esm/Edit02';
@@ -22,7 +21,6 @@ import {
 import { RouterLink } from 'src/components/router-link';
 import { Scrollbar } from 'src/components/scrollbar';
 import { paths } from 'src/paths';
-import { getInitials } from 'src/utils/get-initials';
 
 export const CustomerListTable = (props) => {
   const {
@@ -132,7 +130,6 @@ export const CustomerListTable = (props) => {
           <TableBody>
             {items.map((customer) => {
               const isSelected = selected.includes(customer.id);
-              // const location = `${customer.lesar_member_id}, ${customer.date_assigned_to_cbo}, ${customer.gender}`;
               const member_name = `${customer.lesar_member_id}`;
               const date_assigned_to_cbo = `${customer.date_assigned_to_cbo}`;
               const gender = `${customer.gender}`;
@@ -162,15 +159,6 @@ export const CustomerListTable = (props) => {
                       direction="row"
                       spacing={1}
                     >
-                      {/* <Avatar
-                        src={customer.avatar}
-                        sx={{
-                          height: 42,
-                          width: 42
-                        }}
-                      >
-                        {getInitials(customer.name)}
-                      </Avatar> */}
                       <div>
                         <Link
                           color="inherit"
@@ -201,8 +189,6 @@ export const CustomerListTable = (props) => {
                   </TableCell>
                   <TableCell>
                     <Typography variant="subtitle2">
-                      {/* {totalSpent} */}
-                      {/* {gender} */}
                     </Typography>
                   </TableCell>
                   <TableCell align="right">

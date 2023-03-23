@@ -11,52 +11,7 @@ import { Logo } from 'src/components/logo';
 import { RouterLink } from 'src/components/router-link';
 import { paths } from 'src/paths';
 
-const sections = [
-  {
-    title: 'Menu',
-    items: [
-      {
-        title: 'Browse Components',
-        path: paths.components.index
-      },
-      {
-        title: 'Documentation',
-        external: true,
-        path: paths.docs
-      }
-    ]
-  },
-  {
-    title: 'Legal',
-    items: [
-      {
-        title: 'Terms & Conditions',
-        path: '#'
-      },
-      {
-        title: 'License',
-        path: '#'
-      },
-      {
-        title: 'Contact',
-        path: '#'
-      }
-    ]
-  },
-  {
-    title: 'Social',
-    items: [
-      {
-        title: 'Instagram',
-        path: '#'
-      },
-      {
-        title: 'LinkedIn',
-        path: '#'
-      }
-    ]
-  }
-];
+const sections = [];
 
 export const Footer = (props) => (
   <Box
@@ -122,14 +77,12 @@ export const Footer = (props) => (
                   }
                 }}
               >
-                {/* Devias Kit <span>PRO</span> */}
               </Box>
             </Stack>
             <Typography
               color="text.secondary"
               variant="caption"
             >
-              {/* © 2022 Devias IO */}
             </Typography>
           </Stack>
         </Grid>
@@ -207,7 +160,6 @@ export const Footer = (props) => (
         color="text.secondary"
         variant="caption"
       >
-        {/* All Rights Reserved. */}
       </Typography>
     </Container>
   </Box>
