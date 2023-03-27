@@ -165,23 +165,29 @@ export const customers = [
 ];
 
 export const customer = {
-  id: '5e86805e2bafd54f66cc95c3',
-  address1: 'Street John Wick, no. 7',
-  address2: 'House #25',
+  // id: '5e86805e2bafd54f66cc95c3',
+  // address1: 'Street John Wick, no. 7',
+  // address2: 'House #25',
   avatar: '/assets/avatars/avatar-miron-vitold.png',
-  balance: 0,
-  city: 'San Diego',
-  country: 'USA',
-  currency: '$',
-  email: 'miron.vitold@devias.io',
-  hasDiscount: false,
-  isVerified: true,
-  name: 'Miron Vitold',
-  phone: '+55 748 327 439',
-  state: 'New York',
-  vatRate: 19,
-  zipCode: '240355'
+  // balance: 0,
+  // city: 'San Diego',
+  // country: 'USA',
+  // currency: '$',
+  // email: 'miron.vitold@devias.io',
+  // hasDiscount: false,
+  // isVerified: true,
+  // name: 'Miron Vitold',
+  // phone: '+55 748 327 439',
+  // state: 'New York',
+  // vatRate: 19,
+  // zipCode: '240355'
 };
+
+// const member_name = `${customer.lesar_member_id}`;
+// const date_assigned_to_cbo = `${customer.date_assigned_to_cbo}`;
+// const gender = `${customer.gender}`;
+
+// export const customer = {member_name};
 
 export const emails = [
   {

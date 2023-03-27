@@ -33,8 +33,6 @@ import { getInitials } from 'src/utils/get-initials';
 
 const tabs = [
   { label: 'Details', value: 'details' },
-  { label: 'Invoices', value: 'invoices' },
-  { label: 'Logs', value: 'logs' }
 ];
 
 const useCustomer = () => {
@@ -128,6 +126,20 @@ const Page = () => {
     return null;
   }
 
+  var myHeaders = new Headers();
+  myHeaders.append("Authorization", "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc5OTgxNjMwLCJpYXQiOjE2Nzk4OTUyMzAsImp0aSI6IjQyN2I1NWU5MzFjMjQ0ZmJhNDc1MTA3MGQzNTg2MmZhIiwidXNlcl9pZCI6MX0.YORamWmwXkeyRnWEU949_GUKFHGhL-guL25tqx-WWB0");
+
+  var requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow'
+  };
+
+  fetch("http://127.0.0.1:8000/api/management/member/?_id", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+
   return (
     <>
       <Seo title="Dashboard: Customer Details" />
@@ -181,24 +193,24 @@ const Page = () => {
                       width: 64
                     }}
                   >
-                    {getInitials(customer.name)}
+                    {getInitials(customer.lesar_5member_id)}
                   </Avatar>
                   <Stack spacing={1}>
                     <Typography variant="h4">
-                      {customer.email}
+                      {/* {customer.email} */}
                     </Typography>
                     <Stack
                       alignItems="center"
                       direction="row"
                       spacing={1}
                     >
-                      <Typography variant="subtitle2">
+                      {/* <Typography variant="subtitle2">
                         user_id:
                       </Typography>
                       <Chip
-                        label={customer.id}
+                        // label={customer.id}
                         size="small"
-                      />
+                      /> */}
                     </Stack>
                   </Stack>
                 </Stack>
@@ -263,13 +275,11 @@ const Page = () => {
                     lg={4}
                   >
                     <CustomerBasicDetails
-                      address1={customer.address1}
-                      address2={customer.address2}
-                      country={customer.country}
-                      email={customer.email}
-                      isVerified={!!customer.isVerified}
-                      phone={customer.phone}
-                      state={customer.state}
+                      gender={customer.gender}
+                      date_assigned_to_cbo={customer.date_assigned_to_cbo}
+                      cbo={customer.cbo}
+                      primary_case_manager={customer.primary_case_manager}
+                      secondary_case_manager={customer.secondary_case_manager}
                     />
                   </Grid>
                   <Grid

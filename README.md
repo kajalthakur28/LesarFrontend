@@ -46,4 +46,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 1) LOGIN: "http://localhost:3000/login"
 2) REGISTER: "http://localhost:3000/register"
 3) DASHBOARD: "http://localhost:3000/dashboard"
-4) 
+4) MEMBERS: http://localhost:3000/dashboard/members"

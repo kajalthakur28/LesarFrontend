@@ -34,7 +34,6 @@ export const App = () => {
   useNprogress();
 
   const element = useRoutes(routes);
-  console.log(element, 'ele');
 
   return (
     <ReduxProvider store={store}>

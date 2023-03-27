@@ -55,76 +55,7 @@ export const CustomerEmailsSummary = (props) => {
   const emails = useEmails();
 
   return (
-    <Card {...props}>
-      <CardHeader title="Emails" />
-      <CardContent sx={{ pt: 0 }}>
-        <TextField
-          name="option"
-          onChange={(event) => setEmailOption(event.target.value)}
-          select
-          SelectProps={{ native: true }}
-          sx={{
-            width: 320,
-            maxWidth: '100%'
-          }}
-          variant="outlined"
-          value={emailOption}
-        >
-          {emailOptions.map((option) => (
-            <option
-              key={option}
-              value={option}
-            >
-              {option}
-            </option>
-          ))}
-        </TextField>
-        <Box sx={{ mt: 2 }}>
-          <Button
-            endIcon={(
-              <SvgIcon>
-                <ArrowRightIcon />
-              </SvgIcon>
-            )}
-            variant="contained"
-          >
-            Send email
-          </Button>
-        </Box>
-      </CardContent>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>
-              Mail Type
-            </TableCell>
-            <TableCell>
-              Date
-            </TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {emails.map((email) => {
-            const createdAt = format(email.createdAt, 'dd/MM/yyyy | HH:mm');
-
-            return (
-              <TableRow
-                key={email.id}
-                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-              >
-                <TableCell>
-                  <Typography variant="subtitle2">
-                    {email.description}
-                  </Typography>
-                </TableCell>
-                <TableCell>
-                  {createdAt}
-                </TableCell>
-              </TableRow>
-            );
-          })}
-        </TableBody>
-      </Table>
-    </Card>
+    <>
+    </>
   );
 };

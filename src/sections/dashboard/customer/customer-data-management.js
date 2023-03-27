@@ -2,7 +2,7 @@ import { Box, Button, Card, CardContent, CardHeader, Typography } from '@mui/mat
 
 export const CustomerDataManagement = (props) => (
   <Card {...props}>
-    <CardHeader title="Data Management" />
+    {/* <CardHeader title="Data Management" /> */}
     <CardContent sx={{ pt: 0 }}>
       <Button
         color="error"
@@ -15,9 +15,9 @@ export const CustomerDataManagement = (props) => (
           color="text.secondary"
           variant="body2"
         >
-          Remove this customer’s chart if he requested that, if not
+          <h5>Remove this member's chart if he requested that, if not
           please be aware that what has been deleted can never brought
-          back
+          back</h5>
         </Typography>
       </Box>
     </CardContent>

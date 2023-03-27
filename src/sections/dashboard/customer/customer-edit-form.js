@@ -73,7 +73,7 @@ export const CustomerEditForm = (props) => {
       onSubmit={formik.handleSubmit}
       {...other}>
       <Card>
-        <CardHeader title="Edit Customer" />
+        <CardHeader title="Edit Member" />
         <CardContent sx={{ pt: 0 }}>
           <Grid
             container
@@ -99,7 +99,7 @@ export const CustomerEditForm = (props) => {
               xs={12}
               md={6}
             >
-              <TextField
+              {/* <TextField
                 error={!!(formik.touched.email && formik.errors.email)}
                 fullWidth
                 helperText={formik.touched.email && formik.errors.email}
@@ -109,9 +109,9 @@ export const CustomerEditForm = (props) => {
                 onChange={formik.handleChange}
                 required
                 value={formik.values.email}
-              />
+              /> */}
             </Grid>
-            <Grid
+            {/* <Grid
               xs={12}
               md={6}
             >
@@ -125,8 +125,8 @@ export const CustomerEditForm = (props) => {
                 onChange={formik.handleChange}
                 value={formik.values.country}
               />
-            </Grid>
-            <Grid
+            </Grid> */}
+            {/* <Grid
               xs={12}
               md={6}
             >
@@ -140,8 +140,8 @@ export const CustomerEditForm = (props) => {
                 onChange={formik.handleChange}
                 value={formik.values.state}
               />
-            </Grid>
-            <Grid
+            </Grid> */}
+            {/* <Grid
               xs={12}
               md={6}
             >
@@ -155,8 +155,8 @@ export const CustomerEditForm = (props) => {
                 onChange={formik.handleChange}
                 value={formik.values.address1}
               />
-            </Grid>
-            <Grid
+            </Grid> */}
+            {/* <Grid
               xs={12}
               md={6}
             >
@@ -170,8 +170,8 @@ export const CustomerEditForm = (props) => {
                 onChange={formik.handleChange}
                 value={formik.values.address2}
               />
-            </Grid>
-            <Grid
+            </Grid> */}
+            {/* <Grid
               xs={12}
               md={6}
             >
@@ -185,7 +185,7 @@ export const CustomerEditForm = (props) => {
                 onChange={formik.handleChange}
                 value={formik.values.phone}
               />
-            </Grid>
+            </Grid> */} 
           </Grid>
           <Stack
             divider={<Divider />}
@@ -209,8 +209,8 @@ export const CustomerEditForm = (props) => {
                   color="text.secondary"
                   variant="body2"
                 >
-                  Means that anyone viewing your profile will be able to see your contacts
-                  details
+                  <h5>Means that anyone viewing your profile will be able to see your contacts
+                  details</h5>
                 </Typography>
               </Stack>
               <Switch
@@ -229,7 +229,7 @@ export const CustomerEditForm = (props) => {
               spacing={3}
             >
               <Stack spacing={1}>
-                <Typography
+                {/* <Typography
                   gutterBottom
                   variant="subtitle1"
                 >
@@ -239,18 +239,18 @@ export const CustomerEditForm = (props) => {
                   color="text.secondary"
                   variant="body2"
                 >
-                  Toggling this will let your teammates know that you are available for
-                  acquiring new projects
-                </Typography>
+                  <h5>Toggling this will let your teammates know that you are available for
+                  acquiring new projects</h5>
+                </Typography> */}
               </Stack>
-              <Switch
+              {/* <Switch
                 checked={formik.values.hasDiscount}
                 color="primary"
                 edge="start"
                 name="hasDiscount"
                 onChange={formik.handleChange}
                 value={formik.values.hasDiscount}
-              />
+              /> */}
             </Stack>
           </Stack>
         </CardContent>

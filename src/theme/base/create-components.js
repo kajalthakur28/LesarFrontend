@@ -4,7 +4,6 @@ import { createTheme, inputLabelClasses, tableCellClasses } from '@mui/material'
 const muiTheme = createTheme();
 
 export const createComponents = () => {
-  console.log("=========================")
   return {
     MuiAvatAvaar: {
       styleOverrides: {

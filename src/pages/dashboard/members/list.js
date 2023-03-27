@@ -74,7 +74,7 @@ const useCustomersStore = (searchState) => {
     try {
       //const response = await customersApi.getCustomers(searchState);
       var myHeaders = new Headers();
-      myHeaders.append("Authorization", "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc5Njc2MzE1LCJpYXQiOjE2Nzk1ODk5MTUsImp0aSI6IjU5ODE5MWUxZjViOTRhN2NhNzE5MzAzOWQzMDEzNmM2IiwidXNlcl9pZCI6MX0.Ug7nA3WkiNKHqR8_eedAnK9WdQ8m5g8awfieGKg9CSw");
+      myHeaders.append("Authorization", "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc5OTgxNjMwLCJpYXQiOjE2Nzk4OTUyMzAsImp0aSI6IjQyN2I1NWU5MzFjMjQ0ZmJhNDc1MTA3MGQzNTg2MmZhIiwidXNlcl9pZCI6MX0.YORamWmwXkeyRnWEU949_GUKFHGhL-guL25tqx-WWB0");
       
       var requestOptions = {
         method: 'GET',
@@ -85,7 +85,7 @@ const useCustomersStore = (searchState) => {
       var responce = await fetch("http://127.0.0.1:8000/api/management/member/", requestOptions)
         .then(response => response.text())
         .then(result => {console.log(result)
-                      return result;
+        return result;
         })
         .catch(error => console.log('error', error));
 

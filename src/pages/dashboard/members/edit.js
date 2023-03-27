@@ -72,7 +72,7 @@ const Page = () => {
                     <ArrowLeftIcon />
                   </SvgIcon>
                   <Typography variant="subtitle2">
-                    Customers
+                    Members
                   </Typography>
                 </Link>
               </div>
@@ -101,20 +101,20 @@ const Page = () => {
                   </Avatar>
                   <Stack spacing={1}>
                     <Typography variant="h4">
-                      {customer.email}
+                      {/* {customer.email} */}
                     </Typography>
                     <Stack
                       alignItems="center"
                       direction="row"
                       spacing={1}
                     >
-                      <Typography variant="subtitle2">
+                      {/* <Typography variant="subtitle2">
                         user_id:
                       </Typography>
                       <Chip
                         label={customer.id}
                         size="small"
-                      />
+                      /> */}
                     </Stack>
                   </Stack>
                 </Stack>

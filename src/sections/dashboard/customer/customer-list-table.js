@@ -131,6 +131,7 @@ export const CustomerListTable = (props) => {
             {items.map((customer) => {
               const isSelected = selected.includes(customer.id);
               const member_name = `${customer.lesar_member_id}`;
+              // console.log(member_name, '-----========-----')
               const date_assigned_to_cbo = `${customer.date_assigned_to_cbo}`;
               const gender = `${customer.gender}`;
 
