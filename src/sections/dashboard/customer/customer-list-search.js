@@ -14,6 +14,7 @@ import {
 } from '@mui/material';
 import { useUpdateEffect } from 'src/hooks/use-update-effect';
 
+
 const tabs = [];
 
 const sortOptions = [
@@ -40,6 +41,7 @@ export const CustomerListSearch = (props) => {
   const queryRef = useRef(null);
   const [currentTab, setCurrentTab] = useState('all');
   const [filters, setFilters] = useState({});
+  const [searchResults, setSearchResults] = useState([]);
 
   const handleFiltersUpdate = useCallback(() => {
     onFiltersChange?.(filters);
@@ -67,14 +69,74 @@ export const CustomerListSearch = (props) => {
     });
   }, []);
 
-  const handleQueryChange = useCallback((event) => {
+  async function getToken(email, password) {
+    const response = await fetch('http://127.0.0.1:8000/api/auth/token/', {
+      method: 'POST',
+      body: JSON.stringify({ email: email, password: password }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const data = await response.json();
+    return data.access;
+  }
+  
+  const handleQueryChange = useCallback(async (event) => {
     event.preventDefault();
-    setFilters((prevState) => ({
-      ...prevState,
-      query: queryRef.current?.value
-    }));
-  }, []);
-
+    const query = queryRef.current?.value;
+  
+    const enrollmentStatus = filters.enrollmentStatus;
+    const enrollmentDate = filters.enrollmentDate;
+    const assignedCbo = filters.assignedCbo;
+    const dateAssignedToCbo = filters.dateAssignedToCbo;
+    const primaryCaseManager = filters.primaryCaseManager;
+    const secondaryCaseManager = filters.secondaryCaseManager;
+  
+    const searchParams = new URLSearchParams({ member_id: query });
+  
+    if (enrollmentStatus) {
+      searchParams.append('enrollment_status', enrollmentStatus);
+    }
+    if (enrollmentDate) {
+      searchParams.append('enrollment_date', enrollmentDate);
+    }
+    if (assignedCbo) {
+      searchParams.append('assigned_cbo', assignedCbo);
+    }
+    if (dateAssignedToCbo) {
+      searchParams.append('date_assigned_to_cbo', dateAssignedToCbo);
+    }
+    if (primaryCaseManager) {
+      searchParams.append('primary_case_manager', primaryCaseManager);
+    }
+    if (secondaryCaseManager) {
+      searchParams.append('secondary_case_manager', secondaryCaseManager);
+    }
+    
+    const email = 'admin3@b2.com';
+    const password = 'asdqwe123';
+    const token = await getToken(email, password);
+  
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", `jwt ${token}`);
+  
+    var requestOptions = {
+      method: 'GET',
+      headers: myHeaders,
+      redirect: 'follow'
+    };
+  
+    fetch(`http://127.0.0.1:8000/api/management/member_search/?${searchParams.toString()}`, requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        console.log("a",data)
+        setSearchResults(data.data);
+      })
+      .catch(error => {
+        console.error('An error occurred:', error);
+      });
+  }, [filters]);
+  
   const handleSortChange = useCallback((event) => {
     const [sortBy, sortDir] = event.target.value.split('|');
 

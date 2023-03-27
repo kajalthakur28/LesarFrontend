@@ -55,7 +55,8 @@ const Page = () => {
           // returnTo could be an absolute path
           window.location.href = returnTo || paths.dashboard.index;
         }
-      } catch (err) {
+      }
+       catch (err) {
         console.error(err);
 
         if (isMounted()) {

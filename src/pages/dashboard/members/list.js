@@ -69,12 +69,32 @@ const useCustomersStore = (searchState) => {
     customers: [],
     customersCount: 0
   });
-
+  
+  async function getToken(email, password) {
+    const response = await fetch('http://127.0.0.1:8000/api/auth/token/', {
+      method: 'POST',
+      body: JSON.stringify({ email: email, password: password }),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    console.log("Token:", response)
+    const data = await response.json();
+    console.log("Token:", data)
+    return data.access;
+    
+  }
+  
   const handleCustomersGet = useCallback(async () => {
     try {
       //const response = await customersApi.getCustomers(searchState);
+      const email = 'admin3@b2.com';
+      const password = 'asdqwe123';
+      console.log("qqq",email,password)
+      const token = await getToken(email, password);
+
       var myHeaders = new Headers();
-      myHeaders.append("Authorization", "jwt eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc5Njc2MzE1LCJpYXQiOjE2Nzk1ODk5MTUsImp0aSI6IjU5ODE5MWUxZjViOTRhN2NhNzE5MzAzOWQzMDEzNmM2IiwidXNlcl9pZCI6MX0.Ug7nA3WkiNKHqR8_eedAnK9WdQ8m5g8awfieGKg9CSw");
+      myHeaders.append("Authorization", `jwt ${token}`);
       
       var requestOptions = {
         method: 'GET',
